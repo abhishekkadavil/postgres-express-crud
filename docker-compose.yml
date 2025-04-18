@@ -1,0 +1,44 @@
+version: '3.3'
+services:
+  database:
+    container_name: postgres-container
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    ports:
+      - '5432:5432'
+    expose:
+      - '5432'
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-d", "postgres", "-U", "postgres"]
+      interval: 10s
+      timeout: 45s
+      retries: 10
+    volumes:
+      - ./data/01_create_table.sql:/docker-entrypoint-initdb.d/01_create_table.sql
+      - ./data/02_insert_data.sql:/docker-entrypoint-initdb.d/02_insert_data.sql
+    networks:
+      - my_network
+  go-app:
+    container_name: express-container
+    image: abhishekkadavil/postgres-express-crud:v1
+    environment:
+      DB_HOST: 'postgres-container'
+      DB_PORT: '5432'
+      DB_PASSWORD: 'postgres'
+      DB_NAME: 'postgres'
+      PORT: '5001'
+    ports:
+      - '5001:5001'
+    depends_on:
+      database:
+        condition: service_healthy
+    networks:
+      - my_network
+
+# Define the network
+networks:
+  my_network:
+    driver: bridge

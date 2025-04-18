@@ -1,0 +1,81 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "postgres-express-crud",
+    "collectionId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
+    "dateExported": "2025-04-18T12:00:23.244Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "27f6c63e-437d-412d-986c-60d5d2b90265",
+            "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
+            "containerId": "",
+            "name": "createEmployee",
+            "url": "http://localhost:5001/api/employee",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-04-18T11:39:23.153Z",
+            "modified": "2025-04-18T11:59:28.957Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"employeeId\": 22,\n    \"employeeName\": \"jose\",\n    \"employeeAge\": 20,\n    \"employeeSalary\": 5000,\n    \"employeeDesignation\": \"test engineer\"\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "802900bb-26b5-4f3a-8b47-2b7b77026b91",
+            "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
+            "containerId": "",
+            "name": "getEmployeeByID",
+            "url": "http://localhost:5001/api/employee/22",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-04-18T11:47:17.321Z",
+            "modified": "2025-04-18T11:54:08.850Z",
+            "headers": []
+        },
+        {
+            "_id": "115e132d-b744-41fd-9bbc-6332e7d9c7e4",
+            "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
+            "containerId": "",
+            "name": "getAllEmployees",
+            "url": "http://localhost:5001/api/employees",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-04-18T11:47:19.619Z",
+            "modified": "2025-04-18T11:51:29.276Z",
+            "headers": []
+        },
+        {
+            "_id": "2d5b364b-4f1f-4f1a-a648-3a75377d5350",
+            "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
+            "containerId": "",
+            "name": "updateEmployee",
+            "url": "http://localhost:5001/api/employee/22",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2025-04-18T11:47:22.731Z",
+            "modified": "2025-04-18T11:59:48.627Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"employeeAge\": 25,\n    \"employeeSalary\": 1000,\n    \"employeeDesignation\": \"senior test engineer\"\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "cd7f4d47-ba51-410b-bac5-0f8d70d5f0e5",
+            "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
+            "containerId": "",
+            "name": "deleteEmployee",
+            "url": "http://localhost:5001/api/employee/22",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2025-04-18T11:47:37.713Z",
+            "modified": "2025-04-18T11:59:18.467Z",
+            "headers": []
+        }
+    ],
+    "ref": "568pL6gt0gZFaIqeRQfxywtA10dTV9eRlLmnNbiyCQch3HqO72O3WK-bB8XP6UJ1UTKpA1BcTqnT_HE93UJ5Tg"
+}
