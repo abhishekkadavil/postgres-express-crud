@@ -1,4 +1,6 @@
-This is a simple CRUD API with node and express
+# This is a simple CRUD API with node and express
+
+### dependency
 
 ```
 npm i express dotenv pg cors joi
@@ -10,24 +12,14 @@ dotenv - env value handling
 pg - Postgres  
 cors - CORS operation
 
-middleware is a function that executes during the lifecycle of a request to the server, typically between when the request is received and the response is sent.
-
-eg:  
-// Parses incoming JSON payloads and puts it on req.body.  
-app.use(express.json());
-
-// Enables CORS (Cross-Origin Resource Sharing).  
-app.use(cors());
-
-// Error handling middleware  
-app.use(errorHandling);
-
-swagger
+### Swagger
 
 ```
 npm install --save-dev swagger-ui-express
 npm install --save-dev swagger-autogen
 ```
+
+### Execution
 
 // to run server  
 npm run dev  
@@ -38,10 +30,12 @@ npm run swagger
 npm run swagger && npm run dev  
 swagger url - http://localhost:5001/api-docs/#/
 
-Flow  
+### Flow
+
 index.js -> <- route -> <- validator(middleware) -> <- controller(middleware) -> <- model
 
-// Docker  
+### Docker
+
 To build docker image locally:
 
 ```
