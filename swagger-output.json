@@ -21,9 +21,6 @@
             "schema": {
               "type": "object",
               "properties": {
-                "employeeId": {
-                  "example": "any"
-                },
                 "employeeName": {
                   "example": "any"
                 },
@@ -41,8 +38,8 @@
           }
         ],
         "responses": {
-          "400": {
-            "description": "Bad Request"
+          "default": {
+            "description": ""
           }
         }
       }
@@ -103,8 +100,8 @@
           }
         ],
         "responses": {
-          "400": {
-            "description": "Bad Request"
+          "default": {
+            "description": ""
           }
         }
       },

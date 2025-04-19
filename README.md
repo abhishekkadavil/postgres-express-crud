@@ -21,16 +21,16 @@ npm install --save-dev swagger-ui-express
 npm install --save-dev swagger-autogen
 ```
 
+// to generate swagger and run server  
+npm run swagger && npm run dev  
+swagger url - http://localhost:5001/api-docs/#/
+
 ### Execution
 
 // to run server  
 npm run dev  
 // to generate swagger json  
 npm run swagger
-
-// to generate swagger and run server  
-npm run swagger && npm run dev  
-swagger url - http://localhost:5001/api-docs/#/
 
 ### Test
 
