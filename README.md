@@ -12,6 +12,7 @@ npm i express dotenv pg cors joi
 - pg - Postgres
 - cors - CORS operation
 - `npm i express-async-handler` - Simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers. [https://github.com/abhishekkadavil/postgres-express-crud/pull/2]
+- npm install --save-dev jest supertest - UT
 
 ### Swagger
 
@@ -20,6 +21,10 @@ npm install --save-dev swagger-ui-express
 npm install --save-dev swagger-autogen
 ```
 
+// to generate swagger and run server  
+npm run swagger && npm run dev  
+swagger url - http://localhost:5001/api-docs/#/
+
 ### Execution
 
 // to run server  
@@ -27,9 +32,9 @@ npm run dev
 // to generate swagger json  
 npm run swagger
 
-// to generate swagger and run server  
-npm run swagger && npm run dev  
-swagger url - http://localhost:5001/api-docs/#/
+### Test
+
+npm run test
 
 ### Flow
 

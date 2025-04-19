@@ -18,15 +18,9 @@ const handleResponse = (res, status, message, data = null) => {
 };
 
 export const createEmployee = asyncHandler(async (req, res, next) => {
-  const {
-    employeeId,
-    employeeName,
-    employeeAge,
-    employeeSalary,
-    employeeDesignation,
-  } = req.body;
+  const { employeeName, employeeAge, employeeSalary, employeeDesignation } =
+    req.body;
   const newEmployee = await createEmployeeService(
-    employeeId,
     employeeName,
     employeeAge,
     employeeSalary,
