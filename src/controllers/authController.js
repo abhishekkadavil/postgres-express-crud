@@ -12,9 +12,6 @@ const handleResponse = (res, status, message, data = null) => {
   res.status(status).json({ status, message, data });
 };
 
-// @desc    Register a new user
-// @route   POST /api/auth/register
-// @access  Public
 export const registerUser = asyncHandler(async (req, res) => {
   const { userEmail, userPassword } = req.body;
 
@@ -31,9 +28,6 @@ export const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Login user and get JWT token
-// @route   POST /api/auth/login
-// @access  Public
 export const loginUser = asyncHandler(async (req, res) => {
   const { userEmail, userPassword } = req.body;
 
