@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "postgres-express-crud",
     "collectionId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
-    "dateExported": "2025-04-18T12:00:23.244Z",
+    "dateExported": "2025-04-19T17:15:37.870Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -15,12 +15,16 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2025-04-18T11:39:23.153Z",
-            "modified": "2025-04-18T11:59:28.957Z",
+            "modified": "2025-04-19T17:09:55.876Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"employeeId\": 22,\n    \"employeeName\": \"jose\",\n    \"employeeAge\": 20,\n    \"employeeSalary\": 5000,\n    \"employeeDesignation\": \"test engineer\"\n  }",
+                "raw": "{\n    \"employeeName\": \"jose\",\n    \"employeeAge\": 20,\n    \"employeeSalary\": 5000,\n    \"employeeDesignation\": \"test engineer\"\n  }",
                 "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJqb2huQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ1MDgyNTc1LCJleHAiOjE3NDUwODYxNzV9.Fio_VIpERR3pqsNcajWonS_tSp64hBm9Be64qBXz-QI"
             }
         },
         {
@@ -28,11 +32,11 @@
             "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
             "containerId": "",
             "name": "getEmployeeByID",
-            "url": "http://localhost:5001/api/employee/22",
+            "url": "http://localhost:5001/api/employee/1",
             "method": "GET",
             "sortNum": 20000,
             "created": "2025-04-18T11:47:17.321Z",
-            "modified": "2025-04-18T11:54:08.850Z",
+            "modified": "2025-04-19T09:29:59.100Z",
             "headers": []
         },
         {
@@ -48,15 +52,32 @@
             "headers": []
         },
         {
+            "_id": "b7a1bea6-fe09-4bfe-8ee4-e54325e0138b",
+            "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
+            "containerId": "",
+            "name": "Register user",
+            "url": "http://localhost:5001/api/auth/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-04-19T16:43:21.580Z",
+            "modified": "2025-04-19T16:48:43.181Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userEmail\": \"john@example.com\",\n  \"userPassword\": \"secret123\"\n}",
+                "form": []
+            }
+        },
+        {
             "_id": "2d5b364b-4f1f-4f1a-a648-3a75377d5350",
             "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
             "containerId": "",
             "name": "updateEmployee",
-            "url": "http://localhost:5001/api/employee/22",
+            "url": "http://localhost:5001/api/employee/1",
             "method": "PUT",
             "sortNum": 30000,
             "created": "2025-04-18T11:47:22.731Z",
-            "modified": "2025-04-18T11:59:48.627Z",
+            "modified": "2025-04-19T13:02:52.861Z",
             "headers": [],
             "body": {
                 "type": "json",
@@ -65,17 +86,34 @@
             }
         },
         {
+            "_id": "cbc08f98-dce3-40e6-85a7-c8ead22e7352",
+            "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:5001/api/auth/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-04-19T16:43:39.601Z",
+            "modified": "2025-04-19T16:48:34.850Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userEmail\": \"john@example.com\",\n  \"userPassword\": \"secret123\"\n}",
+                "form": []
+            }
+        },
+        {
             "_id": "cd7f4d47-ba51-410b-bac5-0f8d70d5f0e5",
             "colId": "5e96dc6e-2495-45df-9362-919f1a6b1b46",
             "containerId": "",
             "name": "deleteEmployee",
-            "url": "http://localhost:5001/api/employee/22",
+            "url": "http://localhost:5001/api/employee/54",
             "method": "DELETE",
             "sortNum": 40000,
             "created": "2025-04-18T11:47:37.713Z",
-            "modified": "2025-04-18T11:59:18.467Z",
+            "modified": "2025-04-19T14:44:35.089Z",
             "headers": []
         }
     ],
-    "ref": "568pL6gt0gZFaIqeRQfxywtA10dTV9eRlLmnNbiyCQch3HqO72O3WK-bB8XP6UJ1UTKpA1BcTqnT_HE93UJ5Tg"
+    "ref": "568pL6gt0gZFaIqeRQfxy7qP8W2Ad2knpaRJK4q9lj8ZRrOg1sl0qOqEBuxAChe3hc1RNM2xRgmPbSS2S25HyQ"
 }
