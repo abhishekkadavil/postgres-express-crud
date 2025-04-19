@@ -23,13 +23,16 @@ services:
       - my_network
   express-app:
     container_name: express-container
-    image: abhishekkadavil/postgres-express-crud:v1
+    image: abhishekkadavil/postgres-express-crud:v2
     environment:
+      PORT: '5001'
       DB_HOST: 'postgres-container'
       DB_PORT: '5432'
+      DB_USER: 'postgres'
       DB_PASSWORD: 'postgres'
       DB_NAME: 'postgres'
-      PORT: '5001'
+      JWT_SECRET: '123456'
+      JWT_EXPIRES_IN: '1m'
     ports:
       - '5001:5001'
     depends_on:
@@ -38,18 +41,18 @@ services:
     networks:
       - my_network
   
-  dbeaver:
-    container_name: dbeaver-container
-    image: dbeaver/cloudbeaver
-    ports: ["8000:8978"]
-    hostname: gui
-    volumes:
-      - ./dbeaver:/opt/cloudbeaver/workspace
-    tty: true
-    depends_on:
-      - database
-    links:
-      - database
+  # dbeaver:
+  #   container_name: dbeaver-container
+  #   image: dbeaver/cloudbeaver
+  #   ports: ["8000:8978"]
+  #   hostname: gui
+  #   volumes:
+  #     - ./dbeaver:/opt/cloudbeaver/workspace
+  #   tty: true
+  #   depends_on:
+  #     - database
+  #   links:
+  #     - database
 
 # Define the network
 networks:

@@ -65,7 +65,11 @@ To build docker image locally:
 
 ```
 docker build -t abhishekkadavil/postgres-express-crud:v1 .
-run local docker image locally -
+```
+
+Run local docker image locally:
+
+```
 docker run -p 5001:5001 \
  --network=postgres-express-crud_my_network \
  -e PORT=5001 \
@@ -74,10 +78,12 @@ docker run -p 5001:5001 \
  -e DB_USER=postgres \
  -e DB_PASSWORD=postgres \
  -e DB_NAME=postgres \
- abhishekkadavil/postgres-express-crud:v1
+ -e JWT_SECRET=123456 \
+ -e JWT_EXPIRES_IN=1m \
+ abhishekkadavil/postgres-express-crud:v2
 ```
 
-push to docker hub:
+Push to docker hub:
 
 ```
 docker push abhishekkadavil/postgres-express-crud:v1
