@@ -6,12 +6,12 @@
 npm i express dotenv pg cors joi
 ```
 
-joi - schema validation  
-express - node framework  
-dotenv - env value handling  
-pg - Postgres  
-cors - CORS operation
-npm i express-async-handler - Simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers.
+- joi - Input validation
+- express - node framework
+- dotenv - env value handling
+- pg - Postgres
+- cors - CORS operation
+- `npm i express-async-handler` - Simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers. [https://github.com/abhishekkadavil/postgres-express-crud/pull/2]
 
 ### Swagger
 
