@@ -9,14 +9,23 @@ const employeeCreateScheme = Joi.object({
   employeeDesignation: Joi.string(),
 });
 
+// const validateCreateEmployee = (req, res, next) => {
+//   const { error } = employeeCreateScheme.validate(req.body);
+//   if (error)
+//     return res.status(400).json({
+//       status: 400,
+//       message: error.details[0].message,
+//     });
+//   next();
+// };
+
 const validateCreateEmployee = (req, res, next) => {
   const { error } = employeeCreateScheme.validate(req.body);
-  if (error)
-    return res.status(400).json({
-      status: 400,
-      message: error.details[0].message,
-    });
-  next();
+  if (error) {
+    next(error);
+  } else {
+    next();
+  }
 };
 
 // Update employee validation
