@@ -6,6 +6,7 @@ import { insertUser, findUserByEmail } from "../models/authModel.js";
 
 // JWT secret
 const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN;
 
 // Standardized response function
 const handleResponse = (res, status, message, data = null) => {
@@ -43,7 +44,7 @@ export const loginUser = asyncHandler(async (req, res) => {
   }
 
   const token = jwt.sign({ userEmail: user.user_email }, JWT_SECRET, {
-    expiresIn: "1h",
+    expiresIn: JWT_EXPIRES_IN,
   });
 
   handleResponse(res, 200, "Login successful", { token });
