@@ -24,9 +24,22 @@ app.use("/api", userRoutes);
 app.use(errorHandling);
 
 // Swagger
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+if (process.env.NODE_ENV !== "test") {
+  // Swagger
+  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Server running
-app.listen(port, () => {
-  console.log(`Server is running on http:localhost:${port}`);
-});
+  // Start the server
+  app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
+}
+
+// Only start server if not in test environment
+if (process.env.NODE_ENV !== "test") {
+  app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
+}
+
+// Export the app for testing
+export default app;

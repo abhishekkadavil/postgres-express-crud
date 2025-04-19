@@ -21,7 +21,7 @@ services:
       - ./data/02_insert_data.sql:/docker-entrypoint-initdb.d/02_insert_data.sql
     networks:
       - my_network
-  go-app:
+  express-app:
     container_name: express-container
     image: abhishekkadavil/postgres-express-crud:v1
     environment:
@@ -37,6 +37,19 @@ services:
         condition: service_healthy
     networks:
       - my_network
+  
+  dbeaver:
+    container_name: dbeaver-container
+    image: dbeaver/cloudbeaver
+    ports: ["8000:8978"]
+    hostname: gui
+    volumes:
+      - ./dbeaver:/opt/cloudbeaver/workspace
+    tty: true
+    depends_on:
+      - database
+    links:
+      - database
 
 # Define the network
 networks:

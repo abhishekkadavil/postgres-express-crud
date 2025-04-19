@@ -12,21 +12,14 @@ export const getEmployeeByIdService = async (id) => {
   return result.rows[0];
 };
 export const createEmployeeService = async (
-  employee_id,
   employee_name,
   employee_age,
   employee_salary,
   employee_designation
 ) => {
   const result = await pool.query(
-    "INSERT INTO employees (employee_id, employee_name, employee_age, employee_salary, employee_designation) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-    [
-      employee_id,
-      employee_name,
-      employee_age,
-      employee_salary,
-      employee_designation,
-    ]
+    "INSERT INTO employees (employee_name, employee_age, employee_salary, employee_designation) VALUES ($1, $2, $3, $4) RETURNING *",
+    [employee_name, employee_age, employee_salary, employee_designation]
   );
   return result.rows[0];
 };

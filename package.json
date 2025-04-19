@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node --inspect --watch-path=./ ./index.js",
     "start": "node --inspect --watch-path=./ ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles",
     "swagger": "node ./swagger.js"
   },
   "keywords": [],
@@ -22,6 +22,8 @@
     "pg": "^8.14.1"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   }

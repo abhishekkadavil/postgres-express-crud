@@ -3,6 +3,17 @@ import dotenv from "dotenv";
 const { Pool } = pkg;
 dotenv.config();
 
+if (
+  !process.env.DB_USER ||
+  !process.env.DB_HOST ||
+  !process.env.DB_NAME ||
+  !process.env.DB_PASSWORD ||
+  !process.env.DB_PORT
+) {
+  console.error("Missing required database environment variables");
+  process.exit(1);
+}
+
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -20,7 +31,21 @@ pool.on("connect", () => {
 
 pool.on("error", (err, client) => {
   console.error("Unexpected error on idle client", err);
-  process.exit(-1); // or handle gracefully in production
+  process.exit(1); // or handle gracefully in production
 });
+
+// Only close the pool on exit in non-test environments
+if (process.env.NODE_ENV !== "test") {
+  process.on("SIGINT", async () => {
+    console.log("Gracefully shutting down DB...");
+    await pool.end();
+    process.exit(0);
+  });
+
+  process.on("exit", async () => {
+    console.log("Exiting process, cleaning up DB...");
+    await pool.end();
+  });
+}
 
 export default pool;
