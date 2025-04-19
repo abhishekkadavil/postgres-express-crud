@@ -11,6 +11,7 @@ express - node framework
 dotenv - env value handling  
 pg - Postgres  
 cors - CORS operation
+npm i express-async-handler - Simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers.
 
 ### Swagger
 
