@@ -7,6 +7,7 @@ import swaggerDocument from "./swagger-output.json" with { type: "json" };
 
 import userRoutes from "./src/routes/employeeRoutes.js";
 import errorHandling from "./src/middlewares/errorHandler.js";
+import authRoutes from "./src/routes/authRoutes.js";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(cors());
 
 // Routes
 app.use("/api", userRoutes);
+app.use("/api/auth", authRoutes);
 
 // Error handling middleware
 app.use(errorHandling);
